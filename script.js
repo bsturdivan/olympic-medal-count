@@ -70,11 +70,14 @@ bsturd.paint = medals => {
   const first = medals[0]
   const topTen = medals.slice(0, 10)
   const body = document.body
+  const main = body.querySelector('.main')
 
   Object.keys(first).forEach(item => {
     if (body.querySelector(`[data-text="${item}"]`)) {
       if (item === 'country') {
-        body.querySelector(`[data-text="${item}"]`).textContent = bsturd.getFlagEmoji(first[item])
+        const flag = bsturd.getFlagEmoji(first[item])
+        body.querySelector(`[data-text="${item}"]`).textContent = flag
+        main.textContent = flag
       } else {
         body.querySelector(`[data-text="${item}"]`).textContent = first[item]
       }
@@ -89,6 +92,32 @@ bsturd.paint = medals => {
     li.append(div)
     body.querySelector('ol').append(li)
   })
+}
+
+bsturd.randomInt = (min, max) => {
+  return Math.random() * (max - min + 1) + min;
+}
+
+bsturd.move = () => {
+  const height = document.body.clientHeight / 2
+  const width = document.body.clientWidth / 2
+  const x = bsturd.randomInt(width * -1, width)
+  const y = bsturd.randomInt(height * -1, height)
+  const z = bsturd.randomInt(1, 100)
+  const r = bsturd.randomInt(-45, 45)
+
+  return { x, y, z, r}
+}
+
+bsturd.animate = () => {
+  const main = document.querySelector('.main')
+  const { x, y, z, r } = bsturd.move()
+  main.style.transform = `translate3d(${x}px, ${y}px, ${z}px) rotate(${r}deg)`
+
+  setInterval(() => {
+    const { x, y, z, r } = bsturd.move()
+    main.style.transform = `translate3d(${x}px, ${y}px, ${z}px) rotate(${r}deg)`
+  }, 7000)
 }
 
 bsturd.addMetaTags = medal => {

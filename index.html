@@ -13,9 +13,17 @@
   <link rel="icon" type="image/png" sizes="32x32" href="public/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="public/favicon-16x16.png">
   <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="public/apple-touch-icon.png">
+
+  <meta name="theme-color" content="#c84639" />
+  <meta property="og:title" content="🇺🇸 🇨🇳 🇫🇷 Follow along to see the country with the most points" />
+  <meta property="og:description" content="Gold, Silver, and Bronze" />
+  <meta property="og:url" content="https://olympics.sturd.online" />
+  <meta property="og:image" content="https://s3.amazonaws.com/media.sturd.online/olympics/3.webp" /> 
 </head>
 
 <body>
+  <div class="main">🇺🇸</div>
+
   <section class="container">
     <h1><span data-text="country"></span></span> is the top country in the Olympics with <span data-text="total"></span></span> points.</h1>
     <p>
@@ -31,6 +39,7 @@
     bsturd.medals().then(medals => {
       bsturd.addMetaTags(medals[0])
       bsturd.paint(medals)
+      bsturd.animate()
     })
   </script>
 </body>
