@@ -91,7 +91,7 @@ bsturd.paint = medals => {
 
 bsturd.addMetaTags = medal => {
   const numImages = 6
-  const image = Math.floor(Math.random() * numImages)
+  const image = Math.floor(Math.random() * numImages) + 1
   const imageSrc = `https://s3.amazonaws.com/media.sturd.online/olympics/${image}.webp`
   const metaData = [
     { name: 'og:description', content: `Gold: ${medal.gold}, Silver: ${medal.silver}, Bronze: ${medal.bronze}` },
