@@ -95,10 +95,12 @@ bsturd.addMetaTags = medal => {
   const imageSrc = `https://s3.amazonaws.com/media.sturd.online/olympics/${image}.webp`
   const metaData = [
     { name: 'og:description', content: `Gold: ${medal.gold}, Silver: ${medal.silver}, Bronze: ${medal.bronze}` },
+    { name: 'description', content: `Gold: ${medal.gold}, Silver: ${medal.silver}, Bronze: ${medal.bronze}` },
     { name: 'og:image', content: imageSrc },
+    { name: 'og:title', content: `${bsturd.getFlagEmoji(medal.country)} is the top Olympic country` },
   ]
 
-  document.head.querySelector('title').innerText = `${bsturd.getFlagEmoji(medal.country)} is the top Olympic country`;
+  document.head.querySelector('title').textContent = `${bsturd.getFlagEmoji(medal.country)} is the top Olympic country`;
   metaData.forEach(meta => {
     const metaTag = document.createElement('meta')
     metaTag.setAttribute('name', meta.name)
