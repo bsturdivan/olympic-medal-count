@@ -59,8 +59,7 @@ bsturd = {
 }
 
 bsturd.getFlagEmoji = countryCode => {
-  const codePoints = countryCode
-    .slice(0, 2)
+  const codePoints = window.COUNTRIES[countryCode]
     .toUpperCase()
     .split('')
     .map(char =>  127397 + char.charCodeAt())
@@ -84,7 +83,10 @@ bsturd.paint = medals => {
 
   topTen.forEach(item => {
     const li = document.createElement('li')
+    const div = document.createElement('div')
     li.textContent = `${bsturd.getFlagEmoji(item.country)} ${item.total}`
+    div.innerHTML = `<b>${item.country}</b> Gold: ${item.gold}; Silver: ${item.silver}; Bronze: ${item.bronze}`
+    li.append(div)
     body.querySelector('ol').append(li)
   })
 }

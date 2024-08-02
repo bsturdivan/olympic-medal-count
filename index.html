@@ -5,7 +5,9 @@
   <title>We the best country</title>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
 
+  <script type="text/javascript" src="countries.js"></script>
   <script type="text/javascript" src="script.js"></script>
+  <link rel="stylesheet" href="styles.css">
 
   <link rel="icon" type="image/x-icon" href="public/favicon.ico"  />
   <link rel="icon" type="image/png" sizes="32x32" href="public/favicon-32x32.png">
@@ -14,14 +16,16 @@
 </head>
 
 <body>
-  <h1><span data-text="country"></span></span> is the top country in the Olympics with <span data-text="total"></span></span> points.</h1>
-  <p>
-    Using <a href="https://archive.nytimes.com/beijing2008.blogs.nytimes.com/2008/08/23/the-medal-rankings-which-country-leads-the-olympics/">
-      The New York Times weighted point system
-      </a>: 4 points for gold, 2 points for silver, 1 point for bronze
-  </p>
+  <section class="container">
+    <h1><span data-text="country"></span></span> is the top country in the Olympics with <span data-text="total"></span></span> points.</h1>
+    <p>
+      Using <a target="_blank" rel="noindex nofollow" href="https://archive.nytimes.com/beijing2008.blogs.nytimes.com/2008/08/23/the-medal-rankings-which-country-leads-the-olympics/">
+        The New York Times weighted point system</a>:<br/>
+        <b>4</b> points for gold, <b>2</b> points for silver, <b>1</b> point for bronze
+    </p>
 
-  <ol></ol>
+    <ol></ol>
+  </section>
 
   <script>
     bsturd.medals().then(medals => {
