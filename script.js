@@ -51,7 +51,7 @@ bsturd = {
   },
 
   mutiplyMedals({ gold, silver, bronze}) {
-    const g = gold * 3
+    const g = gold * 4
     const s = silver * 2
 
     return g + s + bronze
@@ -108,10 +108,3 @@ bsturd.addMetaTags = medal => {
     document.head.appendChild(metaTag)
   })
 }
-
-document.addEventListener('DOMContentLoaded', () => {
-  bsturd.medals().then(medals => {
-    bsturd.addMetaTags(medals[0])
-    bsturd.paint(medals)
-  })
-})

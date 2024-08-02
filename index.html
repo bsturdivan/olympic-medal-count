@@ -15,8 +15,19 @@
 
 <body>
   <h1><span data-text="country"></span></span> is the top country in the Olympics with <span data-text="total"></span></span> points.</h1>
-  <p>Metrics: 3 points for gold, 2 points for silver, 1 point for bronze</p>
+  <p>
+    Using <a href="https://archive.nytimes.com/beijing2008.blogs.nytimes.com/2008/08/23/the-medal-rankings-which-country-leads-the-olympics/">
+      The New York Times weighted point system
+      </a>: 4 points for gold, 2 points for silver, 1 point for bronze
+  </p>
 
   <ol></ol>
+
+  <script>
+    bsturd.medals().then(medals => {
+      bsturd.addMetaTags(medals[0])
+      bsturd.paint(medals)
+    })
+  </script>
 </body>
 </html>
