@@ -59,6 +59,10 @@ bsturd = {
 }
 
 bsturd.getFlagEmoji = countryCode => {
+  if (!window.COUNTRIES[countryCode]) {
+    return countryCode
+  }
+  
   const codePoints = window.COUNTRIES[countryCode]
     .toUpperCase()
     .split('')
@@ -104,7 +108,7 @@ bsturd.move = () => {
   const x = bsturd.randomInt(width * -1, width)
   const y = bsturd.randomInt(height * -1, height)
   const z = bsturd.randomInt(1, 100)
-  const r = bsturd.randomInt(-45, 45)
+  const r = bsturd.randomInt(-90, 90)
 
   return { x, y, z, r}
 }
@@ -117,7 +121,7 @@ bsturd.animate = () => {
   setInterval(() => {
     const { x, y, z, r } = bsturd.move()
     main.style.transform = `translate3d(${x}px, ${y}px, ${z}px) rotate(${r}deg)`
-  }, 7000)
+  }, 10000)
 }
 
 bsturd.addMetaTags = medal => {

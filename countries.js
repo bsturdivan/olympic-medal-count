@@ -81,7 +81,7 @@ window.COUNTRIES = {
     "GAB": "GA",
     "GMB": "GM",
     "GEO": "GE",
-    "DEU": "DE",
+    "GER": "DE",
     "GHA": "GH",
     "GIB": "GI",
     "GRC": "GR",

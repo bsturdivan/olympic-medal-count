@@ -1,29 +1,35 @@
 html {
-  background: rgb(34,193,195);
+  background: rgba(200, 70, 57, 1);
   background: linear-gradient(146deg, rgba(200, 70, 57, 1) 0%, rgba(40,87,150,1) 100%);
   line-height: 1.5em;
-  height: 100vh;
 }
 
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  box-sizing: content-box;
+  margin: 0;
+}
+
+.body {
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+  position: relative;
 }
 
 .main {
   width: 100%;
   height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
+  position: relative;
   z-index: 0;
   translate: 0 0 0;
   scale: 2;
   transform: translate3d(0, 0, 0) rotate(20deg);
   transform-origin: center;
-  filter: blur(50px) saturate(1.2);
+  filter: blur(50px) saturate(1.5) brightness(0.7) contrast(1.5);
   font-size: 300vw;
   pointer-events: none;
-  transition: transform 10000ms ease-out;
+  transition: transform 12000ms ease-out;
 }
 
 .container {
@@ -34,6 +40,8 @@ body {
   background-color: rgba(255, 255, 255, 0.5);
   backdrop-filter: blur(30px) saturate(1.1);
   border-radius: 4px;
+  position: relative;
+  z-index: 3;
 }
 
 h1 {
@@ -69,8 +77,8 @@ li div::before {
   display: block;
   position: absolute;
   transform: rotate(45deg);
-  background-color: #f3f3f3;
-  opacity: 0.6;
+  background-color: rgba(243, 243, 243, 0.4);
+  backdrop-filter: blur(20px);
   padding: 4px;
   z-index: -1;
   left: -4px;
