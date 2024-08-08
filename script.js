@@ -15,7 +15,7 @@ bsturd = {
     const parser = new DOMParser()
     const wikiDoc = parser.parseFromString(html, 'text/html')
     const parentElement = wikiDoc.getElementById('Medal_table').parentElement
-    const jsonString = parentElement.querySelector('[data-mw-deduplicate]').dataset.mw
+    const jsonString = parentElement.querySelector('#mwlQ').dataset.mw
     const json = JSON.parse(jsonString || '{}')
 
     return this.extractMedalRanks(json?.parts[0]?.template.params)
